@@ -1,0 +1,9 @@
+.day{
+    width: 13%;
+    border:1px solid #E9EBF5;
+    text-align: center;
+  
+  }
+  .active{
+    background-color: red;
+  }
