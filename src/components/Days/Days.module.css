@@ -1,0 +1,13 @@
+.days{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .day{
+    width: 40px;
+    border:1px solid black;
+    text-align: center;
+  
+  }
