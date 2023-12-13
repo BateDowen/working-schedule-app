@@ -1,38 +1,70 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #E5E5E5;
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+  width: 90%;
+  min-height: 670px;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: #373c4f;
+  display: flex;
 }
+.schedule{
+  width: 60%;
+  display: flex;
+  color: #878895;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 20px 30px;
+  padding: 20px;
+  position: relative;
+  flex-direction: column;
+}
+.schedule::before,
+.schedule::after{
+  content: '';
+  position: absolute;
+  background-color: #d3d5d6d7;
+  border-radius: 0 5px 5px 0;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 100%;
+  width: 12px;
+  height: 97%;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.schedule::before{
+  background-color: rgb(153, 153, 153);
+  height: 94%;
+  left: calc(100% + 12px);
+}
+.names{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+  width: 100%;
+  
+}
+.days{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.day{
+  width: 40px;
+  border:1px solid black;
+  text-align: center;
+
+}
+.name{
+  width: 40px;
+  margin-right: 20px;
 }

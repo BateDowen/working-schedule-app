@@ -1,23 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import Person from './components/Persons/Person';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="schedule">
+
+            
+          
+          {/* <div> */}
+
+            <div className="days">
+              <div className="name">Име</div>
+              <div className="day">Пон</div>
+              <div className="day">Вт</div>
+              <div className="day">Ср</div>
+              <div className="day">Четв</div>
+              <div className="day">Пт</div>
+              <div className="day">Съб</div>
+              <div className="day">Нед</div>
+            </div>
+            <div className="names">
+              <Person />
+              <Person />
+              <Person />
+              <Person />
+             
+                {/* <div className="name">Миро</div>
+                <div className="name">Никол</div>
+                <div className="name">Марийка</div>
+                <div className="name">Дони</div>
+                <div className="shifts">
+                  <div className="shift">1</div>
+                  <div className="shift">2</div>
+                  <div className="shift">1</div>
+                  <div className="shift">2</div>
+                </div> */}
+            </div>
+          {/* </div> */}
+          </div>
+        </div>
+
     </div>
   );
 }

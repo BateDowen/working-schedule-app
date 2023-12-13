@@ -1,0 +1,17 @@
+.person{
+    display: flex;
+}
+.shifts{
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+.shift{
+    width: 40px;
+    border:1px solid black;
+    text-align: center;
+
+
+}
