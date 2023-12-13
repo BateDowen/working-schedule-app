@@ -4,10 +4,23 @@
     flex-direction: row;
     width: 100%;
     margin-bottom: 20px;
+    background-color: #F0F3FF;
+    color: #434676;
   }
   .day{
-    width: 40px;
-    border:1px solid black;
+    width: 13%;
+    border:1px solid #E9EBF5;
     text-align: center;
+  
+  }
+  .name{
+    width: 25%;
+    border: 1px solid #E9EBF5;
+    text-align: center;
+    color: #434676;
+  }
+  
+.name p{
+    padding-top: 10px;
   
   }

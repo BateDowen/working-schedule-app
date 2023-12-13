@@ -2,7 +2,7 @@ import classes from "./Days.module.css";
 const Days = () =>{
     return (
     <div className={classes.days}>
-        <div className="name">Име</div>
+        <div className={classes.name}>Име</div>
         <div className={classes.day}>Пон</div>
         <div className={classes.day}>Вт</div>
         <div className={classes.day}>Ср</div>
