@@ -1,12 +1,19 @@
 import classes from './Day.module.css';
 
 const Day = ({day,index}) =>{
-    let date = new Date();
-    let today = date.getDay();
-    console.log(index);
-    console.log(today);
+    let newDate = new Date();
+    let today = newDate.getDay();
+    
+    const getFirstDay = () =>{
+        const today = new Date();
+        const first = today.getDate() - today.getDay() + index;
+        return new Date(today.setDate(first));
+    };
+//    
+   const date = `${getFirstDay().getDate().toLocaleString()}.${getFirstDay().getMonth().toLocaleString()}`
+    console.log(getFirstDay().toLocaleDateString());
     return(
-        <div className={`${classes.day} ${today === index ? classes.active : ''}`}>{day}</div>
+        <div className={`${classes.day} ${today === index ? classes.active : ''}`}>{day} {date}</div>
 
     )
 };

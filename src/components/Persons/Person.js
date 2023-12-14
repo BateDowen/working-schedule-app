@@ -1,18 +1,21 @@
 import classes from './Person.module.css'
 
-const Person = ()=>{
-
+const Person = ({name})=>{
+    function changeShift(e) {
+        e.preventDefault();
+        console.log('shift');
+    }
     return(
        
         <div className={classes.shifts}>
-            <div className="name">Миро</div>
-            <div className={classes.shift}>1</div>
-            <div className={classes.shift}>2</div>
-            <div className={classes.shift}>1</div>
-            <div className={classes.shift}>2</div>
-            <div className={classes.shift}>2</div>
-            <div className={classes.shift}>2</div>
-            <div className={classes.shift}>2</div>
+            <div className={classes.name}><p>{name}</p></div>
+            <div className={classes.shift} onClick={changeShift}><p>1</p></div>
+            <div className={classes.shift} onClick={changeShift}><p>1</p></div>
+            <div className={classes.shift} onClick={changeShift}><p>1</p></div>
+            <div className={classes.shift} onClick={changeShift}><p>1</p></div>
+            <div className={classes.shift} onClick={changeShift}><p>1</p></div>
+            <div className={classes.shift} onClick={changeShift}><p>1</p></div>
+            <div className={classes.shift} onClick={changeShift}><p>1</p></div>
         </div>
        
     )
