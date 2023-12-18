@@ -1,9 +1,11 @@
 import './App.css';
 import Person from './components/Persons/Person';
-import Days from './components/Days/Days';
+import {Days} from './components/Days/Days';
 
 function App() {
+  
   return (
+
     <div className="App">
       <div className="container">
         <div className="schedule">

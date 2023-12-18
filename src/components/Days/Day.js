@@ -10,8 +10,7 @@ const Day = ({day,index}) =>{
         return new Date(today.setDate(first));
     };
 //    
-   const date = `${getFirstDay().getDate().toLocaleString()}.${getFirstDay().getMonth().toLocaleString()}`
-    console.log(getFirstDay().toLocaleDateString());
+   const date = `${getFirstDay().getDate().toLocaleString()}.${(getFirstDay().getMonth() + 1).toLocaleString()}`
     return(
         <div className={`${classes.day} ${today === index ? classes.active : ''}`}>{day} {date}</div>
 

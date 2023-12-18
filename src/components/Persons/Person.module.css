@@ -9,17 +9,7 @@
     width: 100%;
     height: 9%;
 }
-.shift{
-    width: 13%;
-    border:1px solid #E9EBF5;
-    text-align: center;
-    background-color: #3C63E8;
-    border-radius: 5px;
-}
-.shift p{
-    color: #E9EBF5;
-    padding-top: 10px;
-}
+
 .name{
     width: 25%;
     border: 1px solid #E9EBF5;
