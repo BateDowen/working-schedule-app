@@ -1,13 +1,25 @@
 import classes from "./Person.module.css";
 import { daysArr } from "../Days/Days";
 import Select from "./Select";
+export const peopleSchedule = {
+  'Миро': {},
+  'Николинка': {},
+  'Марийка': {},
+  'Дони': {},
+  'Някой': {}
+};
+localStorage.setItem('Миро','Миро');
+localStorage.setItem('Николинка','Николинка');
+localStorage.setItem('Марийка','Марийка');
+localStorage.setItem('Дони','Дони');
+localStorage.setItem('Някой','Някой');
+
 const Person = ({ name }) => {
   const person = {
     [name]: {
         shifts:{}
     }
   };
-
   // let people = [{name: "Miro", shift:[
   //     {day: 'monday', shift: 1},
   //     {day: 'tuesday', shift: 2}

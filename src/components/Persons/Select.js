@@ -1,3 +1,4 @@
+import { peopleSchedule } from "./Person";
 import classes from "./Select.module.css";
 import { useEffect, useState } from "react";
 
@@ -13,8 +14,11 @@ const Select = ({ day, name, person }) => {
   if (!person[name].shifts.day) {
     person[name].shifts.day = dayOfWeek;
   }
-  person[name].shifts.day[day] = { dayOfWeek, shift };
-  console.log(person);
+  if (!peopleSchedule.name) {
+    peopleSchedule[name] = person[name];
+  }
+  person[name].shifts.day[day] = shift;
+  localStorage.setItem(name, JSON.stringify(peopleSchedule[name]));
 
   return (
     <div className={classes.shift}>
