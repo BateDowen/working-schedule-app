@@ -27,7 +27,7 @@ const Person = ({ name, shifts, persons }) => {
       </div>
       {shifts.map(({day, shift}) => {
         return (
-          <Select day={day} name={name} shift={shift} />
+          <Select key={day} day={day} name={name} shift={shift} />
         );
       })}
     </div>

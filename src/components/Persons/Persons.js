@@ -12,16 +12,25 @@ const peopleSchedule = [
 function Persons() {
 
     const [persons, setPersons] = useState([]);
+    useEffect(() =>{
+        const people = localStorage.getItem('peopleSchedule')
+        if (!people) {
+            localStorage.setItem('peopleSchedule', JSON.stringify(peopleSchedule))
+            
+        } else {
+            return
+        }
+
+    },[]);
 
     useEffect(() => {
-        // localStorage.setItem('peopleSchedule', JSON.stringify(peopleSchedule))
         setPersons(JSON.parse(localStorage.getItem('peopleSchedule')));
 
     } ,[]);
 
 
     return persons.map(p => {
-        return <Person name={p.name} shifts={p.shifts} />
+        return <Person key={p.name} name={p.name} shifts={p.shifts} />
     });
 }
 
