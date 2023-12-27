@@ -1,13 +1,6 @@
 import classes from "./Person.module.css";
-import { daysArr } from "../Days/Days";
 import Select from "./Select";
-export const peopleSchedule = {
-  'Миро': {},
-  'Николинка': {},
-  'Марийка': {},
-  'Дони': {},
-  'Някой': {}
-};
+
 
 const Person = ({ name, shifts, persons }) => {
  

@@ -24,7 +24,9 @@ export const Days = () =>{
       
     return (
     <div className={classes.days}>
-        <div className={classes.name}>Име</div>
+        <div className={classes.name}>
+            <p>Име</p>
+        </div>
         {daysArr.map((e )=>{
        
        return <Day key ={e} day={e} index={daysArr.indexOf(e)}/>

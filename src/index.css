@@ -15,3 +15,13 @@ body {
     color: #434676;
     box-sizing: border-box;
 }
+@media screen and (max-width: 900px) {
+  *{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  *{
+    font-size: 6px;
+  }
+}
