@@ -14,6 +14,7 @@ const Form = (props) =>{
             <form className="form" onSubmit={props.addPerson}>
                 <label htmlFor="name"><span>Име</span></label>
                 <input id="name" onChange={addName} ></input>
+                <button>Добави</button>
             </form>
         </div>
     )

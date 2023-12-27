@@ -1,22 +1,16 @@
+import RemovePeople from "../RemovePeople/RemovePeople";
 import classes from "./Person.module.css";
 import Select from "./Select";
 
 
-const Person = ({ name, shifts, persons }) => {
+const Person = ({ name, shifts }) => {
  
-
-  function addPerson(e) {
-    e.preventDefault();
-
-    console.log(typeof name);
-  }
-
-  
 
   return (
     <div className={classes.shifts}>
       <div className={classes.name}>
-        <p onClick={addPerson}>{name}</p>
+        <p>{name}</p>
+        <RemovePeople name={name}/>
       </div>
       {shifts.map(({day, shift}) => {
         return (

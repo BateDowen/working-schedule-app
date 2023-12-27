@@ -1,0 +1,11 @@
+
+.removePerson{
+    width: 100%;
+    text-align: center;
+    border: 1px solid #E9EBF5;
+    text-align: center;
+    background-color: #3C63E8;
+    border-radius: 5px;
+    color: #E9EBF5;
+    cursor: pointer;
+  }

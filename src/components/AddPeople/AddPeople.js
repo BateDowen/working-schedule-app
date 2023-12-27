@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import classes from './Button.module.css' 
+import classes from './AddPeople.module.css' 
 import Form from './Form';
 
-const Button = ({handleRefresh}) => {
+const AddPeople = ({handleRefresh}) => {
     const navigate = useNavigate();
+    
     const [isShown,setIsShown] = useState(false)
     const toggleForm = () =>{
         setIsShown(current => !current)
@@ -19,17 +20,18 @@ const Button = ({handleRefresh}) => {
             localStorage.setItem('peopleSchedule', JSON.stringify(people));
             
         }
-        setIsShown(current => !current)
-        handleRefresh();
+        setIsShown(current => !current);
+        navigate(0)
+        // handleRefresh();
         
 
     }
   return (
     <div className={classes.addPerson}>
-      <button onClick={toggleForm}>Add Person</button>
+      {!isShown && <button onClick={toggleForm}>Add Person</button>}
       {isShown && <Form addPerson={addPersonHandler} newPersonName = {setNewPersonName} />}
     </div>
   );
 };
-export default Button;
+export default AddPeople;
 

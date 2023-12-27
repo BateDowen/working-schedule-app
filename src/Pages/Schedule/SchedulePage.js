@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Button from "../../components/Button/Button";
+import AddPeople from "../../components/AddPeople/AddPeople";
 import { Days } from "../../components/Days/Days";
 import Persons from "../../components/Persons/Persons";
 
@@ -16,7 +16,7 @@ const Schedule = () => {
 
       <div className="names">
         <Persons />
-        <Button handleRefresh={shouldRefreshHandler} />
+        <AddPeople handleRefresh={shouldRefreshHandler} />
       </div>
     </div>
   );
