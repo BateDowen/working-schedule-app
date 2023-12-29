@@ -52,4 +52,17 @@
   
 }
 
+@media screen and (max-width: 500px) {
+  .schedule{
+    width: 90%;
+    display: flex;
+    color: #878895;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px 5px;
+    padding: 10px;
+    position: relative;
+    flex-direction: column;
+  }
+}
 

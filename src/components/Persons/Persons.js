@@ -5,6 +5,7 @@ import { peopleSchedule } from "../../Utils/Util";
 function Persons() {
   const [persons, setPersons] = useState(peopleSchedule);
   const people = localStorage.getItem("peopleSchedule");
+
   useEffect(() => {
     if (!people) {
       localStorage.setItem("peopleSchedule", JSON.stringify(peopleSchedule));

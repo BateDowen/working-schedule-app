@@ -12,7 +12,7 @@ const Day = ({day,index}) =>{
 //    
    const date = `${getFirstDay().getDate().toLocaleString()}.${(getFirstDay().getMonth() + 1).toLocaleString()}`
     return(
-        <div className={`${classes.day} ${today === index ? classes.active : ''}`}>{day} {date}</div>
+        <div className={`${classes.day} ${today === index ? classes.active : ''}`} >{day} {date}</div>
 
     )
 };
