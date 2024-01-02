@@ -26,11 +26,16 @@ export const Days = () => {
     const prevWeekHandler = () => {
         setIndexDemo(indexDemo.map(e => e - 7))
     }
+    const nextWeekHandler = () => {
+        setIndexDemo(indexDemo.map(e => e + 7))
+
+    }
     return (
         <div className={classes.days}>
         <div className={classes.name}>
           <p>Име</p>
           <button onClick={prevWeekHandler}>Prev</button>
+          <button onClick={nextWeekHandler}>Next</button>
         </div>
         {daysArr.map((e) => {
           return <Day key={e} day={e} index={daysArr.indexOf(e)} indexDemo={indexDemo} />;
