@@ -16,7 +16,17 @@
     text-align: center;
     color: #434676;
   }
+.prevBtn{
+  width: 30%;
+  border: 1px solid #E9EBF5;
+  text-align: center;
+  background-color: #06817c;
+  border-radius: 5px;
+  color: #E9EBF5;
+  cursor: pointer;
+  margin: 5px;
   
+}
 .name p{
     padding-top: 10px;
   
