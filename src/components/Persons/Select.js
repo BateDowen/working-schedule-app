@@ -1,54 +1,34 @@
-import { peopleSchedule } from "../../Utils/Util";
+import { getDate, peopleSchedule } from "../../Utils/Util";
 import classes from "./Select.module.css";
 import { useEffect, useState } from "react";
 
-// const Select = ({day, name, shift }) => {
-  const Select = ({day ,name,shifts, index}) => {
-  function getDate() {
-    let newDate = new Date();
-    let today = newDate.getDay();
-    
-    const getFirstDay = () =>{
-        const today = new Date();
-        const first = today.getDate() - today.getDay() + index;
-        return new Date(today.setDate(first));
-    };
-//    
-   const date = `${getFirstDay().getDate().toLocaleString()}.${(getFirstDay().getMonth() + 1).toLocaleString()}`;
-   return date;
-  };
-  let persons = JSON.parse(localStorage.getItem('peopleSchedule'));
-  let person;
+const Select = ({ day, name, shifts, index }) => {
+  let persons = JSON.parse(localStorage.getItem("peopleSchedule"));
   let shift;
-  
+
   if (persons) {
-    person =  persons.find(p => p.name === name);
+    let person = persons.find((p) => p.name === name);
     shift = person.shifts[index].shift;
-    console.log(shifts[index].day)
-    
   }
 
-  
   function onSelectHandler(e) {
-    let persons = JSON.parse(localStorage.getItem('peopleSchedule'))
-    let person = persons.find(p => p.name === name);
-    // shift = person.shifts[index].shift;
+    let persons = JSON.parse(localStorage.getItem("peopleSchedule"));
+    let person = persons.find((p) => p.name === name);
     person.shifts.map((val) => {
-
       if (val.day === shifts[index].day) {
         val.shift = e.target.value;
         console.log(val.day);
-        val.day = getDate()
-        }
+        val.day = getDate(index);
+      }
     });
     persons.reduce((acc, p) => {
       if (p.name === name) acc.push(person);
       else acc.push(p);
       return acc;
-  }, []);
-  
-  localStorage.setItem('peopleSchedule', JSON.stringify(persons));
-  };
+    }, []);
+
+    localStorage.setItem("peopleSchedule", JSON.stringify(persons));
+  }
 
   return (
     <div className={classes.shift}>
