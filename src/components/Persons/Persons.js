@@ -3,7 +3,7 @@ import Person from "./Person";
 import { peopleSchedule } from "../../Utils/Util";
 import { Context } from "../../Context/Context";
 
-function Persons({dates}) {
+function Persons() {
   const [persons, setPersons] = useState(peopleSchedule);
   const people = localStorage.getItem("peopleSchedule");
 
@@ -19,7 +19,7 @@ console.log(ctx);
 
   return (
        persons.map((p) => {
-        return <Person key={p.name} name={p.name} shifts={p.shifts}dates={dates} />;
+        return <Person key={p.name} name={p.name} shifts={p.shifts} />;
       })
 
   );

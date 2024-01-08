@@ -14,7 +14,7 @@ const Layout = () => {
       <div className="App">
         <div className="container">
           <Context.Provider value={{dates:dates,setDates}}>
-          <Schedule dates={dates} setDates={setDates}/>
+          <Schedule />
 
           </Context.Provider>
         </div>

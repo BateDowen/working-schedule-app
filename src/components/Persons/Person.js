@@ -3,7 +3,7 @@ import classes from "./Person.module.css";
 import Select from "./Select";
 
 const daysArr = ["Нед", "Пон", "Вт", "Ср", "Четв", "Пт", "Сб"];
-const Person = ({ name, shifts,dates }) => {
+const Person = ({ name, shifts}) => {
   return (
     <div className={classes.shifts}>
       <div className={classes.name}>

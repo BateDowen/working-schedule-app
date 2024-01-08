@@ -2,15 +2,15 @@ import { useState } from "react";
 import AddPeople from "../../components/AddPeople/AddPeople";
 import { Days } from "../../components/Days/Days";
 import Persons from "../../components/Persons/Persons";
-const Schedule = ({dates,setDates}) => {
+const Schedule = () => {
 
   return (
 
     <div className="schedule">
-      <Days dates={setDates} />
+      <Days />
 
       <div className="names">
-        <Persons dates={dates} />
+        <Persons />
         <AddPeople  />
       </div>
     </div>

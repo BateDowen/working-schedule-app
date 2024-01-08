@@ -24,12 +24,9 @@ import { Context } from "../../Context/Context";
 export const daysArr = ["Нед", "Пон", "Вт", "Ср", "Четв", "Пт", "Сб"];
 export const Days = () => {
   const [indexHandler, setIndexHandler] = useState([]);
-//   const [datesHandler, setDatesHandler] = useState([1, 2, 3, 4, 5, 6, 7]);
+  const datesHandler = [1, 2, 3, 4, 5, 6, 7];
 
-const datesHandler = [1, 2, 3, 4, 5, 6, 7];
-
-  const ctx = useContext(Context)
-  const navigate = useNavigate();
+  const ctx = useContext(Context);
 
   const prevWeekHandler = () => {
     setIndexHandler(indexHandler.map((e) => e - 7));
@@ -37,12 +34,12 @@ const datesHandler = [1, 2, 3, 4, 5, 6, 7];
   const nextWeekHandler = () => {
     setIndexHandler(indexHandler.map((e) => e + 7));
   };
-  console.log(datesHandler);
-    useEffect(() => {
-    ctx.setDates(datesHandler)
-      console.log('update');
 
-  },[indexHandler])
+  useEffect(() => {
+    ctx.setDates(datesHandler);
+    console.log("update");
+  }, [indexHandler]);
+
   return (
     <div className={classes.days}>
       <div className={classes.name}>
