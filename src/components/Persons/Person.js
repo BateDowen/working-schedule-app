@@ -10,11 +10,6 @@ const Person = ({ name, shifts}) => {
         <p>{name}</p>
         <RemovePeople name={name}/>
       </div>
-      {/* {shifts.map(({day, shift}) => {
-        return (
-          <Select key={day} day={day} name={name} shift={shift} />
-        );
-      })} */}
       {
         daysArr.map((e) =>{
          return <Select key={e} day={e} name={name} shifts={shifts} index={daysArr.indexOf(e)}/>

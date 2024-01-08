@@ -1,25 +1,53 @@
+import { Context } from "../../Context/Context";
 import { getDate, peopleSchedule } from "../../Utils/Util";
 import classes from "./Select.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const Select = ({ day, name, shifts, index }) => {
+  const ctx = useContext(Context);
+
   let persons = JSON.parse(localStorage.getItem("peopleSchedule"));
   let shift;
 
   if (persons) {
     let person = persons.find((p) => p.name === name);
     shift = person.shifts[index].shift;
+    person.shifts.map((val,i) => {
+      if (i == index) {
+        val.day = ctx.dates[index];
+        console.log(i);
+        console.log(val.day);
+        
+      }
+    });
+    persons.reduce((acc, p) => {
+      if (p.name === name) acc.push(person);
+      else acc.push(p);
+      return acc;
+    }, []);
   }
+
+  localStorage.setItem("peopleSchedule", JSON.stringify(persons));
+  console.log(name);
+  console.log(shifts[index].day);
+  console.log(ctx);
 
   function onSelectHandler(e) {
     let persons = JSON.parse(localStorage.getItem("peopleSchedule"));
     let person = persons.find((p) => p.name === name);
-    person.shifts.map((val) => {
-      if (val.day === shifts[index].day) {
-        val.shift = e.target.value;
+    console.log(ctx.dates[index]);
+    person.shifts.map((val,i) => {
+      if (i == index) {
+        // val.day = ctx.dates[index];
+        console.log(i);
         console.log(val.day);
-        val.day = getDate(index);
+        val.shift = e.target.value;
+        
       }
+      // if (val.day === shifts[index].day) {
+      //   val.shift = e.target.value;
+      //   val.day = getDate(index);
+      // }
     });
     persons.reduce((acc, p) => {
       if (p.name === name) acc.push(person);
