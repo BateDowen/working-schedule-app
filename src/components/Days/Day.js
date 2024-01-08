@@ -1,18 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { getDate } from "../../Utils/Util";
 import classes from "./Day.module.css";
+import { Context } from "../../Context/Context";
 
-const Day = ({ day, index, indexDemo }) => {
+const Day = ({ day, index, indexHandler,datesHandler }) => {
   let newDate = new Date();
   let today = newDate.getDay();
-  if (!indexDemo.hasOwnProperty(index)) {
-    indexDemo.push(index);
+
+  const ctx = useContext(Context)
+  if (!indexHandler.hasOwnProperty(index)) {
+    indexHandler.push(index);
   }
-  let date = getDate(indexDemo[index]);
+  let date = getDate(indexHandler[index]);
+  datesHandler[index] = getDate(indexHandler[index]);
+    // console.log(datesHandler);
+   
   return (
     <div
       className={`${classes.day} ${
-        today === indexDemo[index] ? classes.active : ""
+        today === indexHandler[index] ? classes.active : ""
       }`}
     >
       {day} {date}

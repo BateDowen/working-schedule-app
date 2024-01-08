@@ -3,13 +3,20 @@ import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import "./App.css";
 
 import Schedule from "./Pages/Schedule/SchedulePage";
+import { useState } from "react";
+import { Context } from "./Context/Context";
 
 const Layout = () => {
+  const [dates,setDates] = useState([1,2,3,4,5,6,7]);
+
   return (
     <>
       <div className="App">
         <div className="container">
-          <Schedule />
+          <Context.Provider value={{dates:dates,setDates}}>
+          <Schedule dates={dates} setDates={setDates}/>
+
+          </Context.Provider>
         </div>
       </div>
 
