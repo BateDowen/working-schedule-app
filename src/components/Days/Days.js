@@ -19,7 +19,6 @@
 import { useContext, useEffect, useState } from "react";
 import Day from "./Day";
 import classes from "./Days.module.css";
-import { useNavigate } from "react-router-dom";
 import { Context } from "../../Context/Context";
 export const daysArr = ["Нед", "Пон", "Вт", "Ср", "Четв", "Пт", "Сб"];
 export const Days = () => {

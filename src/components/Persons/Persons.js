@@ -1,7 +1,6 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Person from "./Person";
 import { peopleSchedule } from "../../Utils/Util";
-import { Context } from "../../Context/Context";
 
 function Persons() {
   const [persons, setPersons] = useState(peopleSchedule);
@@ -14,8 +13,6 @@ function Persons() {
         setPersons(JSON.parse(localStorage.getItem("peopleSchedule")));
     }
   }, []);
-  const ctx = useContext(Context)
-console.log(ctx);
 
   return (
        persons.map((p) => {

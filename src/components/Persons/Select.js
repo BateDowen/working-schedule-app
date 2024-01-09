@@ -1,5 +1,4 @@
 import { Context } from "../../Context/Context";
-import { getDate, peopleSchedule } from "../../Utils/Util";
 import classes from "./Select.module.css";
 import { useContext, useEffect, useState } from "react";
 
@@ -15,8 +14,6 @@ const Select = ({ day, name, shifts, index }) => {
     person.shifts.map((val,i) => {
       if (i == index) {
         val.day = ctx.dates[index];
-        console.log(i);
-        console.log(val.day);
         
       }
     });
@@ -28,9 +25,6 @@ const Select = ({ day, name, shifts, index }) => {
   }
 
   localStorage.setItem("peopleSchedule", JSON.stringify(persons));
-  console.log(name);
-  console.log(shifts[index].day);
-  console.log(ctx);
 
   function onSelectHandler(e) {
     let persons = JSON.parse(localStorage.getItem("peopleSchedule"));
@@ -38,16 +32,9 @@ const Select = ({ day, name, shifts, index }) => {
     console.log(ctx.dates[index]);
     person.shifts.map((val,i) => {
       if (i == index) {
-        // val.day = ctx.dates[index];
-        console.log(i);
-        console.log(val.day);
         val.shift = e.target.value;
         
       }
-      // if (val.day === shifts[index].day) {
-      //   val.shift = e.target.value;
-      //   val.day = getDate(index);
-      // }
     });
     persons.reduce((acc, p) => {
       if (p.name === name) acc.push(person);
